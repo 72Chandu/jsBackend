@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="http://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="w-full h-screen text-white bg-zinc-900">
+        <div class="flex grap-4 justify-center items-center py-20">
+            <button class="connect send px-5 py-3 bg-blue-500 rounded">connected to server</button>
+            <button class="disconnect send px-5 py-3 bg-red-500 rounded">disconnected from server</button>
+            
+            <input type="text" class="px-3 py-3 bg-zinc-800 rounded border-none outline-none" placeholder="data">
+            <button class="event send px-5 py-3 bg-red-500 rounded">send some event</button>
+            
+            <input type="text" class="messagebox px-3 py-3 bg-zinc-800 rounded border-none outline-none" placeholder="message box">
+            <button class="event1 send px-5 py-3 bg-red-500 rounded">sending message</button>
+
+
+
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script> <!--server of socket io in client side from socketio cdn->client intallation-->
+    <script>
+    var socket=io(); 
+    
+    socket.emit("abcd", 12);//abcd event is send from fronend to backend
+    socket.on("defg", function(){
+        console.log("recevied from backend");
+    });
+    
+    socket.emit("typing");
+    socket.on("typing",function(){
+        console.log("user is typing..");
+    });//corrent tab ke console pe nahi dikega pahele wala tab par dikhega
+    
+    //JAB BUTTOM PAR CLICK KARGA TAB SERVER SE CONNECT HO JAYEGA OR DISCONNECT HOGA 
+    var connect=document.querySelector(".connect");
+    connect.addEventListener("click",function(e){
+        io(); //connect from server
+    })
+    var disconnect=document.querySelector(".disconnect");
+    disconnect.addEventListener("click",function(e){
+        socket.disconnect();//used to disconnect from server 
+    })
+
+    var inp=document.querySelector("input");//SENDING DATA ON BUTTON CLICK (send some event) is buttom pe click karna
+    //SENDING CUSTOM EVENTS ON BUTTON CLICK
+    var event=document.querySelector(".event")
+    event.addEventListener("click",function(e){
+        socket.emit("somemessage", inp.value)
+    })
+
+    //reciveng the data from backend 
+    socket.on("message",function(data){
+        console.log(data);
+    })
+
+    //BROADCASTING ->
+    var inp2=document.querySelector(".messagebox");
+    inp2.addEventListener("click",function(e){
+        socket.emit("typingmessage")
+    })
+    socket.on("typingmessage",function(){
+        console.log("someone is typing");
+    })
+    </script>
+</body>
+</html>

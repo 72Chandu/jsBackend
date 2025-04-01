@@ -1,0 +1,2 @@
+in .env file
+BOT_TOKEN=

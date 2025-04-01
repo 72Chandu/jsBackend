@@ -1,0 +1,105 @@
+{
+    "employees": [
+      {
+        "id": "1",
+        "name": "John Smith",
+        "position": "Software Engineer",
+        "department": "Engineering",
+        "salary": 90000,
+        "contact": {
+          "email": "john.smith@example.com",
+          "phone": "+1234567890"
+        },
+        "address": {
+          "street": "123 Main Street",
+          "city": "Anytown",
+          "state": "CA",
+          "postal_code": "12345",
+          "country": "USA"
+        },
+        "hire_date": "2023-01-15",
+        "manager": "Jane Doe"
+      },
+      {
+        "id": "2",
+        "name": "Alice Johnson",
+        "position": "Marketing Manager",
+        "department": "Marketing",
+        "salary": 80000,
+        "contact": {
+          "email": "alice.johnson@example.com",
+          "phone": "+1234567891"
+        },
+        "address": {
+          "street": "456 Elm Street",
+          "city": "Sometown",
+          "state": "NY",
+          "postal_code": "54321",
+          "country": "USA"
+        },
+        "hire_date": "2022-03-20",
+        "manager": "Bob Williams"
+      },
+      {
+        "id": "3",
+        "name": "Emily Brown",
+        "position": "HR Specialist",
+        "department": "Human Resources",
+        "salary": 65000,
+        "contact": {
+          "email": "emily.brown@example.com",
+          "phone": "+1234567892"
+        },
+        "address": {
+          "street": "789 Oak Street",
+          "city": "Villagetown",
+          "state": "TX",
+          "postal_code": "67890",
+          "country": "USA"
+        },
+        "hire_date": "2022-06-10",
+        "manager": "David Green"
+      },
+      {
+        "id": "4",
+        "name": "Michael Chang",
+        "position": "Financial Analyst",
+        "department": "Finance",
+        "salary": 70000,
+        "contact": {
+          "email": "michael.chang@example.com",
+          "phone": "+1234567893"
+        },
+        "address": {
+          "street": "321 Pine Street",
+          "city": "Mountainville",
+          "state": "CO",
+          "postal_code": "54321",
+          "country": "USA"
+        },
+        "hire_date": "2022-09-05",
+        "manager": "Emma Lee"
+      },
+      {
+        "id": "5",
+        "name": "Sophia Williams",
+        "position": "Product Manager",
+        "department": "Product Management",
+        "salary": 95000,
+        "contact": {
+          "email": "sophia.williams@example.com",
+          "phone": "+1234567894"
+        },
+        "address": {
+          "street": "654 Cedar Street",
+          "city": "Lakeview",
+          "state": "FL",
+          "postal_code": "56789",
+          "country": "USA"
+        },
+        "hire_date": "2022-02-15",
+        "manager": "Robert Johnson"
+      }
+    ]
+  }
+  
